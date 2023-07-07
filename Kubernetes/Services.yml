@@ -1,0 +1,13 @@
+﻿apiVersion: v1
+kind: Service
+metadata:
+ name: securegreetings
+spec:
+ type: NodePort
+ selector:
+   app: securegreetings
+ ports:
+   - name: client
+     protocol: TCP
+     port: 8443
+     nodePort: 32087

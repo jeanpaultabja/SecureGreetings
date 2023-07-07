@@ -1,0 +1,21 @@
+﻿apiVersion: apps/v1
+kind: Deployment
+metadata:
+ name: securegreetings
+ labels:
+    app: securegreetings
+spec:
+ replicas: 1
+ selector:
+    matchLabels:
+      app: securegreetings
+ template:
+    metadata:
+       labels:
+        app: securegreetings
+    spec:
+      containers:
+      - name: securegreetingscontainer
+        image: docker.io/jptabja/securegreetings:v2
+        ports:
+        - containerPort: 8443
